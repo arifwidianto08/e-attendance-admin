@@ -13,7 +13,9 @@ $.ajax({
       weekday: 'long',
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
     };
 
     let tableRow = '';
@@ -28,14 +30,10 @@ $.ajax({
                       </div>
                     </th>
                     <td>
-                     ${
-                       data[i].checkInTime
-                         ? new Date(data[i].checkInTime).toLocaleDateString(
-                             'id-ID',
-                             options
-                           )
-                         : '-'
-                     }
+                     ${new Date(data[i].checkInTime).toLocaleDateString(
+                       'id-ID',
+                       options
+                     )}
                     </td>
                     <td>
                       <span class="badge badge-dot mr-4">

@@ -33,6 +33,15 @@
   <link href="./assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
 </head>
 
+<!-- Check Auth -->
+<script>
+  const admin_token = localStorage.getItem('e_attendance_token');
+
+  if (!admin_token) {
+    window.location.href = './login.php';
+  }
+</script>
+
 <body class="">
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
@@ -70,24 +79,24 @@
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Welcome!</h6>
             </div>
-            <a href="./screens/profile.php" class="dropdown-item">
+            <a href="./profile.php" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
             </a>
-            <a href="./screens/profile.php" class="dropdown-item">
+            <a href="./profile.php" class="dropdown-item">
               <i class="ni ni-settings-gear-65"></i>
               <span>Settings</span>
             </a>
-            <a href="./screens/profile.php" class="dropdown-item">
+            <a href="./profile.php" class="dropdown-item">
               <i class="ni ni-calendar-grid-58"></i>
               <span>Activity</span>
             </a>
-            <a href="./screens/profile.php" class="dropdown-item">
+            <a href="./profile.php" class="dropdown-item">
               <i class="ni ni-support-16"></i>
               <span>Support</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="#!" id="logout_widget" onclick="logout();" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -131,19 +140,19 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="./screens/attendance.php">
+            <a class="nav-link " href="./attendance.php">
               <i class="ni ni-bullet-list-67 text-red"></i> Attendances
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="./screens/users.php">
+            <a class="nav-link" href="./users.php">
               <i class="fas fa-users" style="color:#ffd600 !important;"></i> Users
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="./screens/add_user.php">
+            <a class="nav-link" href="./add_user.php">
               <i class="ni ni-circle-08 text-pink"></i> Register
             </a>
           </li>
@@ -178,7 +187,7 @@
                   <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                  <span class="mb-0 text-sm  font-weight-bold" id="name_profile"></span>
                 </div>
               </div>
             </a>
@@ -186,24 +195,24 @@
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
-              <a href="./screens/profile.php" class="dropdown-item">
+              <a href="./profile.php" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>My profile</span>
               </a>
-              <a href="./screens/profile.php" class="dropdown-item">
+              <a href="./profile.php" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
                 <span>Settings</span>
               </a>
-              <a href="./screens/profile.php" class="dropdown-item">
+              <a href="./profile.php" class="dropdown-item">
                 <i class="ni ni-calendar-grid-58"></i>
                 <span>Activity</span>
               </a>
-              <a href="./screens/profile.php" class="dropdown-item">
+              <a href="./profile.php" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item">
+              <a href="#!" id="logout_widget" onclick="logout();" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>
@@ -610,6 +619,7 @@
       </footer>
     </div>
   </div>
+
   <!--   Core   -->
   <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
   <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -626,6 +636,11 @@
         application: "argon-dashboard-free"
       });
   </script>
+
+  <!-- Functionallity -->
+  <script src="./assets/js/functions/auth.js"></script>
+
+
 </body>
 
 </html>

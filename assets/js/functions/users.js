@@ -1,5 +1,6 @@
 const tablePaper = document.getElementById('table-paper');
 tablePaper.style.display = 'none';
+
 $.ajax({
   url: 'https://e-attendance-development.herokuapp.com/api/users',
   contentType: 'application/json',
