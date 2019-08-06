@@ -14,13 +14,14 @@ function deleteUser(userId) {
     crossOrigin: true,
     crossDomain: true,
     type: 'DELETE',
-    success(response) {
-      getUsers();
-    },
+    success(response) {},
     error(jqXHR) {
       const loader = document.getElementById('loader-screen');
       loader.style.display = 'none';
     }
+  }).done(function(res) {
+    console.log(res);
+    getUsers();
   });
 }
 
