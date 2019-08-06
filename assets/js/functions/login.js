@@ -57,6 +57,9 @@ function login() {
         // Hide Error Message
         errorDisplay.style.display = 'block';
         errorMessage.textContent = 'Authorization Error';
+      } else {
+        errorDisplay.style.display = 'block';
+        errorMessage.textContent = 'Authorization Error';
       }
     }
   });

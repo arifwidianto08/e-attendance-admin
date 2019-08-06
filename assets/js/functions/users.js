@@ -1,7 +1,9 @@
 const tablePaper = document.getElementById('table-paper');
 tablePaper.style.display = 'none';
 
-function deleteUser(userId) {}
+function deleteUser(userId) {
+  console.log(userId);
+}
 
 function getUsers() {
   $.ajax({
@@ -49,9 +51,9 @@ function getUsers() {
                           <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" onclick="deleteUser(${
+                          <a class="dropdown-item" onclick="deleteUser('${
                             data[i]._id
-                          })">Delete</a>
+                          }')">Delete</a>
                           <a class="dropdown-item" href="#">Another action</a>
                           <a class="dropdown-item" href="#">Something else here</a>
                         </div>
