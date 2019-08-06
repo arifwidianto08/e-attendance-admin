@@ -2,7 +2,20 @@ const tablePaper = document.getElementById('table-paper');
 tablePaper.style.display = 'none';
 
 function deleteUser(userId) {
-  console.log(userId);
+  $.ajax({
+    url: `https://e-attendance-development.herokuapp.com/api/users/${userId}`,
+    contentType: 'application/json',
+    crossOrigin: true,
+    crossDomain: true,
+    type: 'DELETE',
+    success(response) {
+      console.log(response);
+    },
+    error(jqXHR) {
+      const loader = document.getElementById('loader-screen');
+      loader.style.display = 'none';
+    }
+  });
 }
 
 function getUsers() {
