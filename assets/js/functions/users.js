@@ -1,5 +1,6 @@
 const tablePaper = document.getElementById('table-paper');
 tablePaper.style.display = 'none';
+
 $(document).ready(function() {
   getUsers();
 });
@@ -19,9 +20,8 @@ function deleteUser(userId) {
       const loader = document.getElementById('loader-screen');
       loader.style.display = 'none';
     }
-  }).done(function(res) {
-    console.log(res);
-    getUsers();
+  }).done(function() {
+    window.location.reload();
   });
 }
 
@@ -99,6 +99,3 @@ function getUsers() {
     }
   });
 }
-
-// execute getUsers
-getUsers();
