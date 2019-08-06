@@ -221,7 +221,7 @@
         <div class="container-fluid mt--7">
 
             <!-- Loading -->
-            <div class="col-lg-12 col-md-12" id="loader-screen" style="text-align:center; display: block">
+            <div class="col-lg-12 col-md-12" id="loader-screen" style="text-align:center; display: none;">
                 <button type="button" style="background: transparent;border: none;" data-clipboard-text="world" title="Copy to clipboard">
                     <div>
                         <i class="ni ni-world ld ld-spin" style="font-size:75px; color:white;"></i>

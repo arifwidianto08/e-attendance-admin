@@ -5,6 +5,9 @@ $(document).ready(function() {
 });
 
 function deleteUser(userId) {
+  const loader = document.getElementById('loader-screen');
+  loader.style.display = 'block';
+
   $.ajax({
     url: `https://e-attendance-development.herokuapp.com/api/users/${userId}`,
     contentType: 'application/json',
@@ -22,6 +25,9 @@ function deleteUser(userId) {
 }
 
 function getUsers() {
+  const loader = document.getElementById('loader-screen');
+  loader.style.display = 'block';
+
   $.ajax({
     url: 'https://e-attendance-development.herokuapp.com/api/users',
     contentType: 'application/json',
