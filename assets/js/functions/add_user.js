@@ -75,8 +75,6 @@ function register() {
     data: credentials,
     dataType: 'json',
     success(data, statusText, jqXHR) {
-      console.log('success: ', data);
-
       // Set value to default
       name.value = '';
       username.value = '';
