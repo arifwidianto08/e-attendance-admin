@@ -124,35 +124,27 @@
           </div>
         </form>
         <!-- Navigation -->
+
         <ul class="navbar-nav">
           <li class="nav-item  class=" active" ">
-          <a class=" nav-link " href=" ./index.php"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../icons.php">
-              <i class="ni ni-planet text-blue"></i> Icons
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../maps.php">
-              <i class="ni ni-pin-3 text-orange"></i> Maps
+          <a class=" nav-link active " href=" ./index.php"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="../tables.php">
-              <i class="ni ni-bullet-list-67 text-red"></i> Tables
+            <a class="nav-link " href="./attendance.php">
+              <i class="ni ni-bullet-list-67 text-red"></i> Attendances
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link " href="../users.php">
+            <a class="nav-link" href="./users.php">
               <i class="fas fa-users" style="color:#ffd600 !important;"></i> Users
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../add_user.php">
+            <a class="nav-link" href="./add_user.php">
               <i class="ni ni-circle-08 text-pink"></i> Register
             </a>
           </li>
@@ -161,12 +153,16 @@
       </div>
     </div>
   </nav>
-  <div class="main-content">
+
+
+
+
+  <div class="main-content" id="main-content">
     <!-- Navbar -->
-    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+    <nav class=" navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.php">User Profile</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.php">Profile</a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -195,19 +191,19 @@
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
-              <a href="../profile.php" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>My profile</span>
               </a>
-              <a href="../profile.php" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
                 <span>Settings</span>
               </a>
-              <a href="../profile.php" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-calendar-grid-58"></i>
                 <span>Activity</span>
               </a>
-              <a href="../profile.php" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Support</span>
               </a>
@@ -220,9 +216,16 @@
           </li>
         </ul>
       </div>
+
+
+
+
     </nav>
     <!-- End Navbar -->
+
     <!-- Header -->
+
+
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(./assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
       <!-- Mask -->
       <span class="mask bg-gradient-default opacity-8"></span>
@@ -230,15 +233,22 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Hello Jesse</h1>
+            <h1 class="display-2 text-white" id="greeting-text"></h1>
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
             <a href="#!" class="btn btn-info">Edit profile</a>
           </div>
         </div>
       </div>
+
+
     </div>
+
+
+
     <!-- Page content -->
     <div class="container-fluid mt--7">
+
+
       <div class="row">
         <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
           <div class="card card-profile shadow">
@@ -277,8 +287,8 @@
                 </div>
               </div>
               <div class="text-center">
-                <h3>
-                  Jessica Jones<span class="font-weight-light">, 27</span>
+                <h3 id="text-profile">
+                  <span class="font-weight-light">, 27</span>
                 </h3>
                 <div class="h5 font-weight-300">
                   <i class="ni location_pin mr-2"></i>Bucharest, Romania
@@ -296,6 +306,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-xl-8 order-xl-1">
           <div class="card bg-secondary shadow">
             <div class="card-header bg-white border-0">
@@ -329,64 +340,25 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
+                        <label class="form-control-label" for="input-dull-name">Full name</label>
+                        <input type="text" id="input-full-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
                       </div>
                     </div>
                   </div>
-                </div>
-                <hr class="my-4" />
-                <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Contact information</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                      </div>
+                  <hr class="my-4" />
+                  <!-- Description -->
+                  <h6 class="heading-small text-muted mb-4">About me</h6>
+                  <div class="pl-lg-4">
+                    <div class="form-group">
+                      <label>About Me</label>
+                      <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-city">City</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-country">Country</label>
-                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-country">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr class="my-4" />
-                <!-- Description -->
-                <h6 class="heading-small text-muted mb-4">About me</h6>
-                <div class="pl-lg-4">
-                  <div class="form-group">
-                    <label>About Me</label>
-                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                  </div>
-                </div>
               </form>
             </div>
           </div>
         </div>
+
       </div>
       <!-- Footer -->
       <footer class="footer">
@@ -432,6 +404,7 @@
   </script>
   <!-- Check Auth -->
   <script src="./assets/js/functions/auth.js"></script>
+  <script src="./assets/js/functions/profile.js"></script>
 
 
 </body>

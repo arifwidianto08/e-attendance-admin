@@ -26,8 +26,10 @@ function deleteUser(userId) {
 }
 
 function getUsers() {
+  const tablePaper = document.getElementById('table-paper');
   const loader = document.getElementById('loader-screen');
   loader.style.display = 'block';
+  tablePaper.style.display = 'none';
 
   $.ajax({
     url: 'https://e-attendance-development.herokuapp.com/api/users',
@@ -39,6 +41,15 @@ function getUsers() {
       const { data } = response;
       const tableBodyLight = document.getElementById('tbody-light');
       let tableRow = '';
+
+      if (data.length === 0) {
+        tableRow = `<tr><td>
+                      <span class="badge badge-dot mr-4">
+                        No Data
+                      </span>
+                    </td></tr>`;
+      }
+
       for (let i = 0; i < data.length; i++) {
         tableRow += `<tr>
                     <th scope="row">
@@ -95,7 +106,18 @@ function getUsers() {
     },
     error(jqXHR) {
       const loader = document.getElementById('loader-screen');
+      const tablePaper = document.getElementById('table-paper');
+      const tableBodyLight = document.getElementById('tbody-light');
+      let tableRow = '';
+      tableRow = `<tr><td>
+                      <span class="badge badge-dot mr-4">
+                        No Data
+                      </span>
+                    </td></tr>`;
+
       loader.style.display = 'none';
+      tablePaper.style.display = 'block';
+      tableBodyLight.innerHTML += tableRow;
     }
   });
 }
