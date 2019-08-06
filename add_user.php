@@ -309,9 +309,9 @@
                                 </div>
 
                                 <!-- Response Message -->
-                                <!-- <div class="form-group" style="text-align:center;">
+                                <div class="form-group" style="text-align:center;display:none" id='error-display'>
                                     <small id="response-message"><span class="text-danger font-weight-700" id="error-message"></span></small>
-                                </div> -->
+                                </div>
                                 <!-- Response Message -->
 
                                 <div class="text-center">

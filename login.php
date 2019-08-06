@@ -77,6 +77,13 @@
                     <span class="text-muted">Remember me</span>
                   </label>
                 </div>
+
+                <!-- Response Message -->
+                <div class="form-group" style="text-align:center;margin-top:1.5rem;display:none;" id='error-display'>
+                  <small id="response-message"><span class="text-danger font-weight-700" id="error-message">aa</span></small>
+                </div>
+                <!-- Response Message -->
+
                 <div class="text-center">
                   <button id="btn-login" type="button" onclick="login();" class="btn btn-primary my-4">Sign in</button>
                 </div>

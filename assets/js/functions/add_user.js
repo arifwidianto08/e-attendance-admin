@@ -8,6 +8,8 @@ const password = document.getElementById('password');
 const birthdate = document.getElementById('birthdate');
 const registerForm = document.getElementById('register-form');
 const buttonSubmit = document.getElementById('button-submit');
+const errorDisplay = document.getElementById('error-display');
+const errorMessage = document.getElementById('error-message');
 
 // Lowercase the username
 username.onkeyup = function() {
@@ -63,6 +65,10 @@ function register() {
                 </button>
             </div>`;
 
+  // Hide Error Message
+  errorDisplay.style.display = 'none';
+  errorMessage.textContent = '';
+
   $.ajax({
     type: 'POST',
     url: 'https://e-attendance-development.herokuapp.com/api/users',
@@ -93,9 +99,7 @@ function register() {
       buttonSubmit.removeAttribute('disabled');
       buttonSubmit.innerHTML = 'Create account';
     },
-    error(jqXHR, textStatus) {
-      console.log(textStatus);
-
+    error(jqXHR) {
       // Enable all field
       name.removeAttribute('disabled');
       username.removeAttribute('disabled');
@@ -108,6 +112,12 @@ function register() {
       // Enable submit button
       buttonSubmit.removeAttribute('disabled');
       buttonSubmit.innerHTML = 'Create account';
+
+      // Hide Error Message
+      if (jqXHR.status === 422) {
+        errorDisplay.style.display = 'block';
+        errorMessage.textContent = 'All field must be filled!';
+      }
     }
   });
 }

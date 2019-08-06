@@ -1,6 +1,8 @@
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const buttonLogin = document.getElementById('btn-login');
+const errorDisplay = document.getElementById('error-display');
+const errorMessage = document.getElementById('error-message');
 
 function checkAuth() {
   const admin_token = localStorage.getItem('e_attendance_token');
@@ -17,6 +19,10 @@ function login() {
   };
 
   buttonLogin.setAttribute('disabled', true);
+
+  // Hide Error Message
+  errorDisplay.style.display = 'none';
+  errorMessage.textContent = '';
 
   $.ajax({
     type: 'POST',
@@ -39,13 +45,19 @@ function login() {
       // redirect to home/dashboard
       window.location.href = './index.php';
     },
-    error(jqXHR, textStatus) {
-      console.log(textStatus);
+    error(jqXHR) {
+      console.log(jqXHR);
 
       // Set value to default
       username.value = '';
       password.value = '';
       buttonLogin.removeAttribute('disabled');
+
+      if (jqXHR.status === 401) {
+        // Hide Error Message
+        errorDisplay.style.display = 'block';
+        errorMessage.textContent = 'Authorization Error';
+      }
     }
   });
 }
