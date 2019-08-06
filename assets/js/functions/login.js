@@ -46,8 +46,6 @@ function login() {
       window.location.href = './index.php';
     },
     error(jqXHR) {
-      console.log(jqXHR);
-
       // Set value to default
       username.value = '';
       password.value = '';

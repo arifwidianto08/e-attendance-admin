@@ -1,5 +1,8 @@
 const tablePaper = document.getElementById('table-paper');
 tablePaper.style.display = 'none';
+$(document).ready(function() {
+  getUsers();
+});
 
 function deleteUser(userId) {
   $.ajax({
@@ -9,7 +12,7 @@ function deleteUser(userId) {
     crossDomain: true,
     type: 'DELETE',
     success(response) {
-      console.log(response);
+      getUsers();
     },
     error(jqXHR) {
       const loader = document.getElementById('loader-screen');
