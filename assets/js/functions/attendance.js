@@ -38,6 +38,7 @@ function getAttendances() {
       }
 
       for (let i = 0; i < data.length; i++) {
+        console.log(data[i].user.name);
         tableRow += `<tr>
                     <th scope="row">
                       <div class="media align-items-center">
