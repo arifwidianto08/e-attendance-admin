@@ -240,7 +240,9 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
+                    <th scope="col">Nama Siswa</th>
                     <th scope="col">Ruang</th>
+                    <th scope="col">Kelas</th>
                     <th scope="col">Checkin Time</th>
                     <th scope="col">Checkout Time</th>
                     <th scope="col">Status</th>
