@@ -47,23 +47,17 @@ function getAttendances() {
                         </div>
                       </div>
                     </th>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">${data[i].classroom ||
-                            '-'}</span>
-                        </div>
-                      </div>
-                    </th>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">${data[i].user.grade ||
-                            '-'}</span>
-                        </div>
-                      </div>
-                    </th>
-                  
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                         ${data[i].classroom || '-'}
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                         ${data[i].user.grade || '-'}
+                      </span>
+                    </td>
+                    
                     <td>
                      ${new Date(data[i].checkInTime).toLocaleDateString(
                        'id-ID',
